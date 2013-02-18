@@ -3,4 +3,6 @@ node_modules
 [#]*[#]
 .\#*
 tmp
+resource
 .monitor
+data

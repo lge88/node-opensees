@@ -1,0 +1,12 @@
+warning: Current output protocol does not support redirection
+warning: no loadable sections found in added symbol-file system-supplied DSO at 0x2aaaaaaab000
+[Thread debugging using libthread_db enabled]
+warning: Current output protocol does not support redirection
+Working directory /home/GL/Develop/server/node-opensees-server/files/shared/tests.
+Undefined command: "$cwd".  Try "help".
+Undefined command: "cwd".  Try "help".
+Working directory /home/GL/Develop/server/node-opensees-server/files/shared/tests.
+The directory where separate debug symbols are searched for is "/usr/lib/debug".
+Environment variable "pwd" not defined.
+PWD = /home/GL/Develop/OpenSees/BUILD/debug/gdb
+Quit

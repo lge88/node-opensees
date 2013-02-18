@@ -17,5 +17,9 @@
     "scientific computing"
   ],
   "author": "Li Ge",
-  "license": "BSD"
+  "license": "BSD",
+  "dependencies": {
+    "mkdirp": "~0.3.4",
+    "lodash": "~1.0.0"
+  }
 }

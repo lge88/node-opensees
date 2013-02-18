@@ -1,1 +1,1 @@
-module.exports = require('./lib/opensees.js');
+module.exports = require('./lib/OpenSees.js');
