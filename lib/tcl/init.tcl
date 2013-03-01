@@ -6,19 +6,38 @@ proc __filename {} {
     return [file normalize [file join [pwd] [info script]]]
 }
 
-rename analyze __analyze
-proc analyze args {
-    puts "you don't run analyze here, haha"
+proc setup_paths {} {
+    global INIT_PATH TMP_PATH RES_PATH
+    set INIT_PATH [__dirname]
+    set TMP_PATH [file join $INIT_PATH tmp]
+    set RES_PATH [file normalize [file join $INIT_PATH "../../resource"]]
 }
+setup_paths
 
 rename recorder __recorder
-proc recorder args {
-    puts "you don't set recorder here, haha"
+rename analyze __analyze
+proc disable_analyze {} {
+    proc analyze args {
+        puts "analyze command is disabled"
+    }                      
+}
+proc enable_analyze {} {
+    puts "analyze command is enabled"
+    proc analyze args {
+        eval "__analyze $args"
+    }   
 }
 
-rename print __print
-proc print args {
-    puts "you don't print here, haha"
+proc disable_recorder {} {
+    proc recorder args {
+        puts "recorder command is disabled"
+    }                      
+}
+proc enable_recorder {} {
+    puts "recorder command is enabled"
+    proc recorder args {
+        eval "__recorder $args"
+    }
 }
 
 set command_history [list ]
