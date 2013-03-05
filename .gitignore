@@ -6,3 +6,4 @@ tmp
 resource
 .monitor
 data
+*.out
