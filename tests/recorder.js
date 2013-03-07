@@ -10,7 +10,13 @@ ops.on('stderr', function(str) {
 });
 
 ops.on('data', function(d) {
-  console.log('data:' + d);
+  var i = 0, num;
+  console.log('len:' + d.length);
+  while (i + 8 < d.length) {
+    console.log('i:' + i);
+    console.log(d.readDoubleLE(i));
+    i += 8;
+  }
 });
 
 ops.on('ready', function(d) {
@@ -22,7 +28,7 @@ ops.on('ready', function(d) {
   ops.interp('source Truss.tcl');
   
   ops.interp('enable_recorder');
-  ops.interp('recorder Node -file $__DATA_STREAM_FILE -node 1 2 3 4 -dof 1 2 disp');
+  ops.interp('recorder Node -binary $__DATA_STREAM_FILE -node 1 2 3 4 -dof 1 2 disp');
   
   ops.interp('enable_analyze');
   ops.interp('analyze 1');
